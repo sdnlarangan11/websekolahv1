@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin | SDN Larangan 11</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+<div class="admin-shell">
+  <aside class="sidebar">
+    <div class="admin-logo">
+      <img class="city-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Lambang_Kota_Tangerang.png/250px-Lambang_Kota_Tangerang.png" alt="">
+      <div><strong>Admin Sekolah</strong><span>SDN Larangan 11</span></div>
+    </div>
+    <button class="side active" data-target="dashboard">Dashboard</button>
+    <button class="side" data-target="news">Berita</button>
+    <button class="side" data-target="announcements">Pengumuman</button>
+    <button class="side" data-target="achievements">Prestasi</button>
+    <button class="side" data-target="gallery">Galeri</button>
+    <a class="side" href="index.html">← Lihat Website</a>
+  </aside>
+
+  <main class="admin-main">
+    <section class="admin-section active" id="dashboard">
+      <span class="eyebrow">Dashboard</span>
+      <h1>Kelola website sekolah</h1>
+      <div class="stats" id="stats"></div>
+      <div class="notice">
+        <strong>Mode prototype lokal</strong>
+        <p>Data tersimpan di browser melalui localStorage. Belum ada login, database online, atau upload file ke server.</p>
+      </div>
+    </section>
+
+    <section class="admin-section" id="news">
+      <span class="eyebrow">Konten</span><h1>Berita</h1>
+      <form id="newsForm" class="form-card">
+        <input type="hidden" id="newsId">
+        <label>Judul<input id="newsTitle" required></label>
+        <label>Tanggal<input id="newsDate" type="date" required></label>
+        <label>Ringkasan<textarea id="newsExcerpt" required></textarea></label>
+        <label>URL Foto<input id="newsImage" placeholder="https://..."></label>
+        <button class="btn primary">Simpan Berita</button>
+      </form>
+      <div class="admin-list" id="adminNewsList"></div>
+    </section>
+
+    <section class="admin-section" id="announcements">
+      <span class="eyebrow">Konten</span><h1>Pengumuman</h1>
+      <form id="announcementForm" class="form-card">
+        <input type="hidden" id="announcementId">
+        <label>Judul<input id="announcementTitle" required></label>
+        <label>Tanggal<input id="announcementDate" type="date" required></label>
+        <label>Isi<textarea id="announcementBody" required></textarea></label>
+        <button class="btn primary">Simpan Pengumuman</button>
+      </form>
+      <div class="admin-list" id="adminAnnouncementList"></div>
+    </section>
+
+    <section class="admin-section" id="achievements">
+      <span class="eyebrow">Konten</span><h1>Prestasi</h1>
+      <form id="achievementForm" class="form-card">
+        <input type="hidden" id="achievementId">
+        <label>Judul Prestasi<input id="achievementTitle" required></label>
+        <label>Tingkat / Kegiatan<input id="achievementLevel" required></label>
+        <label>Tahun<input id="achievementYear" type="number" required></label>
+        <button class="btn primary">Simpan Prestasi</button>
+      </form>
+      <div class="admin-list" id="adminAchievementList"></div>
+    </section>
+
+    <section class="admin-section" id="gallery">
+      <span class="eyebrow">Media</span><h1>Galeri</h1>
+      <form id="galleryForm" class="form-card">
+        <input type="hidden" id="galleryId">
+        <label>Judul Foto<input id="galleryTitle" required></label>
+        <label>URL Foto<input id="galleryImage" placeholder="https://..." required></label>
+        <button class="btn primary">Tambahkan Foto</button>
+      </form>
+      <div class="notice compact"><strong>Catatan:</strong> gunakan URL gambar langsung. Versi Supabase nantinya akan memakai tombol upload foto dari perangkat.</div>
+      <div class="admin-list" id="adminGalleryList"></div>
+    </section>
+  </main>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>
